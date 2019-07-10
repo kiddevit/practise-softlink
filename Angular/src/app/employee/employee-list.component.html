@@ -1,0 +1,42 @@
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" routerLink="/company">ITcompanies</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li> <a routerLink="/company">Список компаний</a> </li>
+                    <li> <a routerLink="/employee">Список сотрудников</a> </li>
+                    <li> <a routerLink="/product">Список продуктов</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="page-header">
+    <h1> Список сотрудников </h1>
+</div>
+<div class="panel">
+    <a routerLink="/employee/create" class="btn btn-warning">Добавить</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>ФИО Работника</th>
+            <th>Заработная плата</th>
+            <th class="col-md-1"></th>
+            <th class="col-md-1"></th>
+            <th class="col-md-1"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.fio}}</td>
+            <td>{{employee.price}}</td>
+            <td><button (click)="edit(employee)" class="btn btn-sm btn-primary">Изменить</button></td>
+            <td><button (click)="delete(employee.id)" class="btn btn-sm btn-danger">Удалить</button></td>
+            <td><button (click)="select(employee)" class="btn btn-info">Подробнее</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

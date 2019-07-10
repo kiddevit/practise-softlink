@@ -1,0 +1,46 @@
+<div>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" routerLink="/company">ITcompanies</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-main">
+                <ul class="nav navbar-nav">
+                    <li> <a routerLink="/company">Список компаний</a> </li>
+                    <li> <a routerLink="/employee">Список сотрудников</a> </li>
+                    <li> <a routerLink="/product">Список продуктов</a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</div>
+<div class="page-header">
+    <h1> Список компаний</h1>
+</div>
+<div class="panel">
+    <a routerLink="/company/create" class="btn btn-warning">Добавить</a>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>Название компании</th>
+            <th>Адрес главного офиса</th>
+            <th>Телефон главного офиса</th>
+            <th>Количество сотрудников</th>
+            <th class="col-md-1"></th>
+            <th class="col-md-1"></th>
+            <th class="col-md-1"></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let company of companies">
+            <td>{{company.name}}</td>
+            <td>{{company.main_address}}</td>
+            <td>{{company.main_number}}</td>
+            <td>{{company.count_employee}}</td>
+            <td><button (click)="edit(company)" class="btn btn-sm btn-primary">Изменить</button></td>
+            <td><button (click)="delete(company.id)" class="btn btn-sm btn-danger">Удалить</button></td>
+            <td><button (click)="select(company)" class="btn btn-info">Подробнее</button></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,51 @@
+<div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="col-md-offset-2 col-md-10">
+                <h2>Редактирование продукта</h2>
+            </div>
+            <div class="form-group">
+                <label>Название продукта</label>
+                <input class="form-control" name="name" [(ngModel)]="product.name" #name="ngModel" required  />
+                <div [hidden]="name.valid || name.untouched" class="alert alert-danger">
+                    Не указано название
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Версия продукта</label>
+                <input type="number" class="form-control" name="version" [(ngModel)]="product.version" #version="ngModel" required />
+                <div [hidden]="version.valid || version.untouched" class="alert alert-danger">
+                    Версия продукта указана неверно
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Тип лицензии</label>
+                <select class="form-control" name="type_license" [(ngModel)]="product.type_license" #type_license="ngModel" required  >
+                    <option>Free</option>
+                    <option>Shareware</option>
+                </select>
+                <div [hidden]="type_license.valid || type_license.untouched" class="alert alert-danger">
+                    Не указан тип лицензии
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Лицензионный период</label>
+                <input type="number" class="form-control" name="license_period" [(ngModel)]="product.license_period" #license_period="ngModel" required />
+                <div [hidden]="license_period.valid || license_period.untouched" class="alert alert-danger">
+                    Лицензионный период указан неверно
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-1">
+                        <button [disabled]="name.invalid || version.invalid || type_license.invalid || license_period.invalid"
+                                class="btn btn-success" (click)="save()">Сохранить</button>
+                    </div>
+                    <div class="col-md-offset-9 col-md-1">
+                        <a routerLink="/product" class="btn btn-primary">Отмена</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

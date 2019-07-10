@@ -1,0 +1,40 @@
+<div>
+    <div class="row">
+        <div class="col-md-offset-3 col-md-6">
+            <div class="col-md-offset-2 col-md-10">
+                <h2>Информация о продукте</h2>
+            </div>
+            <div class="form-group">
+                <label>Код продукта</label>
+                <input type="number" class="form-control" [value]="product.id" readonly="readonly"/>
+            </div>
+            <div class="form-group">
+                <label>Название продукта</label>
+                <input class="form-control" [value]="product.name" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <label>Версия продукта</label>
+                <input type="number" class="form-control" [value]="product.version" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <label>Тип лицензии</label>
+                <input class="form-control" [value]="product.type_license" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <label>Лицензионный период</label>
+                <input type="number" class="form-control" [value]="product.license_period" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <label>Код компании</label>
+                <input type="number" class="form-control" [value]="product.id_company" readonly="readonly" />
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-offset-5 col-md-1">
+                        <a routerLink="/product" class="btn btn-primary">Назад</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
