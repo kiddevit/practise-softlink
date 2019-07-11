@@ -8,7 +8,8 @@ module.exports = {
    output:{
        path: path.resolve(__dirname, './public'),     // путь к каталогу выходных файлов - папка public
        publicPath: '/public/',
-       filename: "[name].js"       // название создаваемого файла
+       filename: "[name].js",       // название создаваемого файла
+       chunkFilename: '[name]-chunk.js'
    },
    devServer: {
      historyApiFallback: true,
@@ -25,7 +26,8 @@ module.exports = {
                     loader: 'awesome-typescript-loader',
                     options: { configFileName: path.resolve(__dirname, 'tsconfig.json') }
                   } ,
-                   'angular2-template-loader'
+                   'angular2-template-loader',
+                   'angular-router-loader'
                ]
             },{
               test: /\.html$/,
