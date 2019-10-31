@@ -28,6 +28,6 @@
     "raw-loader": "0.5.1",
     "html-loader": "0.5.1",
     "angular-router-loader": "^0.8.5",
-    "bootstrap": "3.3.2"
+    "bootstrap": "3.4.1"
   }
 }
